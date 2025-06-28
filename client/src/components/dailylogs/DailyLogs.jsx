@@ -25,6 +25,8 @@ function DailyLogs() {
 
   const dateFilterOptions = ['all', 'today', 'yesterday', 'dayBeforeYesterday', 'lastSevenDays', 'pickByDate'];
   const toTitleCase = (str) => str.replace(/\b\w/g, (char) => char.toUpperCase());
+  const API_BASE = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
     if (dateFilter === 'pickByDate' && dateInputRef.current) {
@@ -35,7 +37,7 @@ function DailyLogs() {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/log-api/get-logs', {
+        const response = await axios.get(`${API_BASE}/log-api/get-logs`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });
         if (response.status === 200) {

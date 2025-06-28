@@ -3,10 +3,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 function AddBookmarkModal() {
     const { register, handleSubmit, formState: { errors } } = useForm();
-
+    const API_BASE = import.meta.env.VITE_API_URL;
     const handleAddBookmark = async (bookmarkObj) => {
         try {
-            const response = await axios.post('http://localhost:4000/bookmark-api/create-bookmark', bookmarkObj,
+            const response = await axios.post(`${API_BASE}/bookmark-api/create-bookmark`, bookmarkObj,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`

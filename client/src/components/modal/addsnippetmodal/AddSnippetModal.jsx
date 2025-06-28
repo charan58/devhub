@@ -9,11 +9,12 @@ function AddSnippetModal() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [error, setError] = useState('');
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   const handleAddSnippet=async(snippetObj)=>{
 
     try {
-      const response = await axios.post('http://localhost:4000/snippet-api/create-snippet', snippetObj,{
+      const response = await axios.post(`${API_BASE}/snippet-api/create-snippet`, snippetObj,{
         headers:{
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }

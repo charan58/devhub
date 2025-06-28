@@ -4,10 +4,11 @@ import { toast } from "react-toastify";
 
 function AddLearningModal() {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   const handleAddLearning = async (learningObj) => {
     try {
-      const response = await axios.post('http://localhost:4000/learning-api/create-learning', learningObj, {
+      const response = await axios.post(`${API_BASE}/learning-api/create-learning`, learningObj, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       })
       if (response.status === 201) {

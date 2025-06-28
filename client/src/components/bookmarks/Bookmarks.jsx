@@ -11,11 +11,12 @@ function Bookmarks() {
   const [bookmarks, setBookmarks] = useState([]);
   const [showBookmarkModal, setShowBookmarkModal] = useState(false);
   const { isAuthenticated } = useAuth();
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchBookmarks = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/bookmark-api/get-bookmarks', {
+        const response = await axios.get(`${API_BASE}/bookmark-api/get-bookmarks`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
           }
@@ -35,7 +36,7 @@ function Bookmarks() {
 
   const handleDeleteBookmark = async (bookmarkId) => {
     try {
-      const response = await axios.delete(`http://localhost:4000/bookmark-api/delete-bookmark/${bookmarkId}`, {
+      const response = await axios.delete(`${API_BASE}/bookmark-api/delete-bookmark/${bookmarkId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       })
       if (response.status === 200) toast.info(response.data);

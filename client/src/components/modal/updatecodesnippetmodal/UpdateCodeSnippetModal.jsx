@@ -14,6 +14,9 @@ function UpdateCodeSnippetModal({ snippet, onUpdateComplete }) {
     }
   });
 
+  const API_BASE = import.meta.env.VITE_API_URL;
+
+
   const handleUpdatecSnippet = async (data) => {
     // Filter only updatable fields
     const allowedFields = ['title', 'codeSnippet', 'description'];
@@ -24,7 +27,7 @@ function UpdateCodeSnippetModal({ snippet, onUpdateComplete }) {
 
 
     try {
-      const response = await axios.patch(`http://localhost:4000/snippet-api/update-snippet/${snippet.id}`, filteredUpdate, {
+      const response = await axios.patch(`${API_BASE}/snippet-api/update-snippet/${snippet.id}`, filteredUpdate, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       })
       const updatedSnippet = {

@@ -38,10 +38,13 @@ function Snippets() {
     (languageFilter === '' || snippet.language === languageFilter)
   );
 
+  const API_BASE = import.meta.env.VITE_API_URL;
+
+
   useEffect(() => {
     const handleGetUserSnippets = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/snippet-api/get-snippets', {
+        const response = await axios.get(`${API_BASE}/snippet-api/get-snippets`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -73,7 +76,7 @@ function Snippets() {
   const handleDeleteSnippet = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/snippet-api/delete-snippet/${selectedSnippet.id}`,
+        `${API_BASE}/snippet-api/delete-snippet/${selectedSnippet.id}`,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         }

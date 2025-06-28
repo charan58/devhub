@@ -16,7 +16,7 @@ function Home() {
   });
 
   const token = localStorage.getItem("token");
-
+  const API_BASE = import.meta.env.VITE_API_URL;
   useEffect(() => {
     const fetchCounts = async () => {
       try {
@@ -25,10 +25,10 @@ function Home() {
         };
 
         const [snippetRes, logRes, bookmarkRes, learningRes] = await Promise.all([
-          axios.get("http://localhost:4000/snippet-api/get-snippet-count", { headers }),
-          axios.get("http://localhost:4000/log-api/get-log-count", { headers }),
-          axios.get("http://localhost:4000/bookmark-api/get-bookmark-count", { headers }),
-          axios.get("http://localhost:4000/learning-api/get-learning-count", { headers }),
+          axios.get(`${API_BASE}/snippet-api/get-snippet-count`, { headers }),
+          axios.get(`${API_BASE}/log-api/get-log-count`, { headers }),
+          axios.get(`${API_BASE}/bookmark-api/get-bookmark-count`, { headers }),
+          axios.get(`${API_BASE}/learning-api/get-learning-count`, { headers }),
         ]);
 
         setCounts({

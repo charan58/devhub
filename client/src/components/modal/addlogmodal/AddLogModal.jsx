@@ -9,9 +9,10 @@ function AddLogModal({ formatDate }) {
     const todayDate = new Date();
     const createdAt = formatDate(todayDate);
     const logObj = { ...logFormObj, createdAt };
+    const API_BASE = import.meta.env.VITE_API_URL;
 
     try {
-      const response = await axios.post('http://localhost:4000/log-api/create-log', logObj, {
+      const response = await axios.post(`${API_BASE}/log-api/create-log`, logObj, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }

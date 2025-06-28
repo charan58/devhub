@@ -13,11 +13,12 @@ function Learning() {
   const [searchTerm, setSearchTerm] = useState('');
 
   const { isAuthenticated } = useAuth();
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchLearnings = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/learning-api/get-learnings', {
+        const response = await axios.get(`${API_BASE}/learning-api/get-learnings`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         if (response.status === 200) {
@@ -35,7 +36,7 @@ function Learning() {
 
   const handleDeleteLearning = async (learningId) => {
     try {
-      const response = await axios.delete(`http://localhost:4000/learning-api/delete-learning/${learningId}`, {
+      const response = await axios.delete(`${API_BASE}/learning-api/delete-learning/${learningId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       })
 
