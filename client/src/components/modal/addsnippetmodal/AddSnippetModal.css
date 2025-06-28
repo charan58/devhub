@@ -1,0 +1,35 @@
+.add-content h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+input[type="text"],
+select,
+textarea {
+  padding: 0.7rem 1rem;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+select{
+    min-width: 400px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary, #2563eb);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+  outline: none;
+}
+
+textarea {
+  resize: horizontal;
+  min-width: 370px;
+}

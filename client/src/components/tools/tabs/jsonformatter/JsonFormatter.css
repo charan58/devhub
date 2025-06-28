@@ -1,0 +1,53 @@
+.json-formatter-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.json-formatter-input,
+.json-formatter-output {
+    width: 100%;
+}
+
+.json-input,
+.json-output {
+    width: 90%;
+    padding: 0.75rem;
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px solid var(--color-border-dark);
+    border-radius: 0.5rem;
+    background-color: var(--color-card-bg);
+    color: var(--color-text-primary);
+}
+
+.actions {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.actions button{
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: var(--font-weight-semibold);
+    transition: background-color 0.2s ease;
+}
+.copy-btn-div button{
+     margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: var(--color-primary);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: var(--font-weight-semibold);
+    transition: background-color 0.2s ease;
+}
+.copy-btn-div button:hover{
+    background-color: white;
+    border-color: var(--color-primary);
+}

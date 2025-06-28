@@ -1,0 +1,178 @@
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-text-inverse);
+}
+
+.register-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/images/devhub_reg_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+.register-content {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.register-content h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-inverse);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+input {
+  width: 90%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: 0.5rem;
+  background-color: #111;
+  color: #fff;
+  font-size: var(--font-size-base);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.4);
+  outline: none;
+}
+
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-icon input {
+  padding-right: 1rem;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.text-error {
+  color: var(--color-error);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.password-strength {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.password-strength.weak {
+  color: var(--color-error);
+}
+
+.password-strength.medium {
+  color: var(--color-warning);
+}
+
+.password-strength.strong {
+  color: var(--color-success);
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:disabled {
+  background-color: var(--color-border-dark);
+  cursor: not-allowed;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+p a {
+  color: var(--color-primary-light);
+  font-weight: var(--font-weight-semibold);
+}
+
+p a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.disabled-button {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

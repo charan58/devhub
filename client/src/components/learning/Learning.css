@@ -1,0 +1,103 @@
+.learnings-container{
+    padding: 2rem;
+    background-color: var(--color-section-bg);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-medium);
+    color: var(--color-text-primary);
+}
+
+.learnings-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.add-learning-btn{
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-learning-btn:hover{
+    background-color: var(--color-primary-dark);
+}
+
+.learning-controls{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    margin-bottom: 2rem;
+}
+
+.learnings-controls input{
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-base);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border-dark);
+  background-color: var(--color-card-bg, #ffffff);
+  color: var(--color-text-primary);
+}
+
+.learnings-list{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.learnings-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.learnings-card h4{
+    margin-top: 0.7rem;
+}
+
+.learnings-card:hover{
+    box-shadow: var(--shadow-medium);
+}
+
+.learnings-topic{
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.3rem;
+}
+
+.resource-item{
+    list-style-type: none;
+}
+
+.resource-link{
+    color: var(--color-link);
+    text-decoration: underline;
+    font-size: var(--font-size-sm);
+}
+.resource-link:hover{
+    text-decoration: none;
+}
+
+.learning-delete-btn {
+  background-color: #ffe0e0;
+  color: #cc0000;
+  margin-top: 1rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.learning-delete-btn:hover {
+  background-color: #ffc2c2;
+}

@@ -1,0 +1,41 @@
+.tools-container {
+  margin: 1rem 0.5rem;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-light);
+  padding: 1rem;
+}
+
+.tabs{
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid var(--color-border-dark);
+    margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+.tab.active {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: var(--color-section-bg);
+  border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.tab-content {
+  padding: 1rem 0;
+}

@@ -1,0 +1,147 @@
+.snippets-container {
+  padding: 2rem;
+  background-color: var(--color-section-bg);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-medium);
+  color: var(--color-text-primary);
+}
+
+/* Header */
+.snippets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.comp-heading {
+  font-size: var(--font-size-xl);
+}
+
+/* Add Snippet Button */
+.add-snippet-btn, .add-snippet-btn-2 {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-snippet-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.snippets-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.snippets-controls input,
+.snippets-controls select {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-base);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border-dark);
+  background-color: var(--color-card-bg, #ffffff);
+  color: var(--color-text-primary);
+}
+
+.snippet-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.snippet-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.snippet-card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+/* Snippet Metadata */
+.snippet-card h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 0.3rem;
+}
+
+.badge {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-inverse);
+  padding: 0.25rem 0.5rem;
+  font-size: var(--font-size-sm);
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.tag {
+  background-color: var(--color-accent-light);
+  color: var(--color-text-primary);
+  padding: 0.2rem 0.5rem;
+  font-size: var(--font-size-sm);
+  border-radius: 0.25rem;
+  margin-right: 0.3rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+.snippet-card p {
+  color: var(--color-text-secondary);
+  margin: 0.5rem 0 1rem 0;
+  font-size: var(--font-size-sm);
+}
+
+.snippet-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.snippet-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.update-btn {
+  background-color: #e0f3ff;
+  color: #007acc;
+}
+
+.update-btn:hover {
+  background-color: #c2e7ff;
+}
+
+.delete-btn {
+  background-color: #ffe0e0;
+  color: #cc0000;
+}
+
+.delete-btn:hover {
+  background-color: #ffc2c2;
+}
+
+.btn-2{
+  text-align: center;
+  margin-top: 1rem; 
+}
