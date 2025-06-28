@@ -18,8 +18,8 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true 
+  origin: 'https://devhub-peach.vercel.app',
+  credentials: true, 
 }));
 
 app.use(express.static(path.join(__dirname, '../client/dist')))
