@@ -2,7 +2,7 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import { v4 as uuidv4 } from 'uuid';
 import { parse } from 'date-fns'
-import Log from '../models/log.js';
+import Log from '../models/Log.js';
 import { verifyToken } from "../middleware/authMiddleware.js";
 const logApp = express.Router();
 logApp.use(express.json());
