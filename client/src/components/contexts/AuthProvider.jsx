@@ -13,24 +13,24 @@ function AuthProvider({ children }) {
     // login
     const login = async (loginObj) => {
         try {
-            const response = await axios.post('http://localhost:4000/user-api/login', loginObj)
+            // Use env variable VITE_API_URL for base API URL
+            const API_BASE = import.meta.env.VITE_API_URL;
+            const response = await axios.post(`${API_BASE}/user-api/login`, loginObj);
+
             if (response.status === 200) {
                 setUser(response.data.user);
-
                 setIsAuthenticated(true);
-
                 setError('');
-
                 localStorage.setItem("token", response.data.token);
-
-                toast.success("Login Suceesfull")
+                toast.success("Login Successful");
             } else {
-                setError(res.data.message);
+                setError(response.data.message);
             }
         } catch (error) {
             setError(error.response?.data?.message || error.message);
         }
     };
+
 
 
     // logout
@@ -40,7 +40,7 @@ function AuthProvider({ children }) {
         toast.success("Logged out!");
     };
     return (
-        <AuthContext.Provider value={{ isAuthenticated, user, login, logout, error}}>
+        <AuthContext.Provider value={{ isAuthenticated, user, login, logout, error }}>
             {children}
         </AuthContext.Provider>
     )

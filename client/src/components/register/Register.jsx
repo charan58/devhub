@@ -12,16 +12,18 @@ function Register() {
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState('');
 
-    const handleRegister = async(registerObj) => {
+    const handleRegister = async (registerObj) => {
         const { confirmPassword, ...registerData } = registerObj;
         try {
-            const response = await axios.post('http://localhost:4000/user-api/register', registerData);
+            const API_BASE = import.meta.env.VITE_API_URL;
+            const response = await axios.post(`${API_BASE}/user-api/register`, registerData);
             toast.success("Registered Successfully!");
             reset();
         } catch (error) {
             toast.error("Registration error");
         }
     };
+
 
     const watchPasswordValue = watch('password');
     const watchConfirmPasswordValue = watch('confirmPassword');
