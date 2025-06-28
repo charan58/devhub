@@ -17,6 +17,7 @@ function Home() {
 
   const token = localStorage.getItem("token");
   const API_BASE = import.meta.env.VITE_API_URL;
+  const QUOTES_API_KEY = import.meta.env.VITE_QUOTES_API_KEY;
   useEffect(() => {
     const fetchCounts = async () => {
       try {
@@ -46,7 +47,7 @@ function Home() {
       try {
         const response = await axios.get("https://api.api-ninjas.com/v1/quotes", {
           headers: {
-            'X-Api-Key': 'JNdn9E6BiP1p7afqZalOqA==tjc1xRyU1HclEiip'  
+            'X-Api-Key': QUOTES_API_KEY  
           }
         });
 
